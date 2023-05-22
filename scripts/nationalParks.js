@@ -43,6 +43,7 @@ function displaySelectedPark(search) {
   let valueValue = document.querySelector('input[name="search"]:checked').value;
 
   fullTable.style.display = "block";
+  let search2 = search.split(" ");
 
   if (valueValue == 2) {
     outputTable.innerHTML = " ";
@@ -51,7 +52,19 @@ function displaySelectedPark(search) {
     for (let i = 0; i < searchArray.length; i++) {
       tableBuilder(outputTable, searchArray[i]);
     }
-  } else if (valueValue == 1) {
+  } 
+  else if (valueValue == 1 && search2.length > 1){
+    outputTable.innerHTML = " ";
+
+    let searchArray = nationalParksArray.filter((s) =>
+      s.LocationName.includes(search2[0]) && s.LocationName.includes(search2[1])
+    );
+
+    for (let i = 0; i < searchArray.length; i++) {
+        tableBuilder(outputTable, searchArray[i]);
+      }
+  }
+  else if (valueValue == 1) {
     outputTable.innerHTML = " ";
 
     let searchArray = nationalParksArray.filter((s) =>
@@ -70,6 +83,7 @@ function loadParkType(value) {
   outputTable.innerHTML = " ";
 
   outputSearch.style.display = "block";
+  fullTable.style.display = "none";
 
   if (value == 1) {
     outputSearch.innerHTML = " ";
