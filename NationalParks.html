@@ -25,13 +25,15 @@
         </div>
     </nav>
     <div class="container">
+        <div class="btn-group" style="padding-bottom: 1em;" role="group">
     <form action="" class="mt-2">
         <p>Search by:</p>
-        <input type="radio" name="search" id="parkType" value="1" onchange="loadParkType(value);">
-        <label for="parkType">Park Type</label>
-        <input type="radio" name="search" id="location" value="2" onchange="loadParkType(value);">
-        <label for="location">Location</label>
+        <input type="radio" name="search" id="parkType" value="1" onchange="loadParkType(value);" class="btn-check">
+        <label for="parkType" class="btn btn-outline-primary">Park Type</label>
+        <input type="radio" name="search" id="location" value="2" onchange="loadParkType(value);" class="btn-check">
+        <label for="location" class="btn btn-outline-primary">Location</label>
     </form>
+</div>
     <select name="search2" id="search" onchange="displaySelectedPark(value);" style="display: none;"></select>
     <div>
         <table style="display: none;" id="fullTable" class="table table-striped">
