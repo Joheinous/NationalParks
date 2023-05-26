@@ -122,3 +122,14 @@ function loadParkType(value) {
     }
   }
 }
+
+function displayAllParks() {
+  fullTable.style.display = "block";
+  outputTable.innerHTML = " ";
+
+  for (let i = 0; i < nationalParksArray.length; i++) {
+    tableBuilder(outputTable, nationalParksArray[i]);
+    
+  }
+
+}
