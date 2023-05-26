@@ -53,19 +53,19 @@ function displaySelectedPark(search) {
     for (let i = 0; i < searchArray.length; i++) {
       tableBuilder(outputTable, searchArray[i]);
     }
-  } 
-  else if (valueValue == 1 && search2.length > 1){
+  } else if (valueValue == 1 && search2.length > 1) {
     outputTable.innerHTML = " ";
 
-    let searchArray = nationalParksArray.filter((s) =>
-      s.LocationName.includes(search2[0]) && s.LocationName.includes(search2[1])
+    let searchArray = nationalParksArray.filter(
+      (s) =>
+        s.LocationName.includes(search2[0]) &&
+        s.LocationName.includes(search2[1])
     );
 
     for (let i = 0; i < searchArray.length; i++) {
-        tableBuilder(outputTable, searchArray[i]);
-      }
-  }
-  else if (valueValue == 1) {
+      tableBuilder(outputTable, searchArray[i]);
+    }
+  } else if (valueValue == 1) {
     outputTable.innerHTML = " ";
 
     let searchArray = nationalParksArray.filter((s) =>
@@ -86,15 +86,13 @@ function loadParkType(value) {
   outputSearch.style.display = "block";
   fullTable.style.display = "none";
 
-  
-
   if (value == 1) {
     outputSearch.innerHTML = " ";
     let theOption = document.createElement("option");
 
     theOption.textContent = "Choose an Option...";
     theOption.value = "";
-  
+
     outputSearch.appendChild(theOption);
     for (let i = 0; i < parkTypesArray.length; i++) {
       let theOption = document.createElement("option");
@@ -110,7 +108,7 @@ function loadParkType(value) {
 
     theOption.textContent = "Choose an Option...";
     theOption.value = "";
-  
+
     outputSearch.appendChild(theOption);
     for (let i = 0; i < locationsArray.length; i++) {
       let theOption = document.createElement("option");
@@ -129,7 +127,5 @@ function displayAllParks() {
 
   for (let i = 0; i < nationalParksArray.length; i++) {
     tableBuilder(outputTable, nationalParksArray[i]);
-    
   }
-
 }
