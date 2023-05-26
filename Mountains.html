@@ -12,7 +12,7 @@
       crossorigin="anonymous"
     />
   </head>
-  <body class="h-100">
+  <body class="h-100 bg-light">
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container-fluid" style="padding:.5em .5em .5em .5em">
         
@@ -30,11 +30,12 @@
     </div>
 </nav>
     <div class="container">
-      <p>Select a mountain:</p>
+      <p class="mt-2">Select a mountain:</p>
       <select
         name="mountains"
         id="mountains"
         onchange="displayMountain(value);"
+        class="form-select"
       ></select>
       <div id="output"></div>
     </div>
